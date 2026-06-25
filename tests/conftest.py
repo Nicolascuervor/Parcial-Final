@@ -42,7 +42,7 @@ def db_session(engine):
     connection.close()
 
 @pytest.fixture(scope="function")
-def client(db_session):
+def client_con_bd(db_session):
     """
     Fixture del TestClient que inyecta (override) la db_session transaccional
     para que la API utilice la misma base de datos de prueba y se le aplique el rollback.
